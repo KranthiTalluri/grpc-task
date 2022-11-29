@@ -8,4 +8,7 @@
    ```
     #Do this in the project folder console.
     conda env create -f env.yml
+     #or to update
+    conda env update --f env.yml --prune
+
   ```
