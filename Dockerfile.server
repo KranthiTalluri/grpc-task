@@ -1,0 +1,18 @@
+FROM continuumio/miniconda3
+
+WORKDIR /server
+
+# Copy env yml file
+COPY env.yml .
+
+# Create the conda env
+RUN conda env create -f env.yml
+
+# Make RUN commands use the new environment:
+SHELL ["conda", "run", "-n", "grpc-task", "/bin/bash", "-c"]
+
+# Export port
+EXPOSE 50051
+
+# start app
+CMD ["conda", "run", "--no-capture-output", "-n", "grpc-task", "python", "server.py", "--host", "0.0.0.0"]
