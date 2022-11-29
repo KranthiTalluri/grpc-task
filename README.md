@@ -1,6 +1,6 @@
 # GRPC Client - Server
 
-- This work is part of `Company-Interview` Task.
+- This work is part of `Interview` Task.
 
 
 ## Getting started
